@@ -1,0 +1,10 @@
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: default
+spec:
+  requirements:
+    - key: kubernetes.io/arch
+      operator: Exists
+    - key: node.kubernetes.io/instance-type
+      operator: Exists
